@@ -32,10 +32,15 @@ body{
 </style>
 
 <script type="text/javascript">
-  var url="https://2676583711.github.io/"
-   function show(html){
-     document.getElementById("abc").href=url+html
-    return url+html
+
+  var hurl="https://2676583711.github.io/" //主页面地址
+
+   function show(idName,html){
+     document.getElementById("idName").href=html
+   }
+
+   function integrate(idName,html){
+     document.getElementById("idName").href=url+html
    }
     
    </script>
@@ -45,36 +50,40 @@ body{
  
      <ol id="abc">
      	<li>
-        <a href="http://www.baidu.com" target="rightFrame" onclick="show('course.html')">点击这里去百度
+        <a href="" target="rightFrame" id="a1" onclick="show('a1','http://www.baidu.com')"  target='rightFrame'>点击这里去百度
         </a>
       </li>
      	<hr/>
 
       	<li>
-          <a href="https://blog.csdn.net/tieselingzhi/article/details/79764048" target="rightFrame" onclick="show('course.html')">JDK各个版本比较,JDK5~JDK10
+          <a href="" id="a2" onclick="integrate('a2','https://blog.csdn.net/tieselingzhi/article/details/79764048')"  target="rightFrame">JDK各个版本比较,JDK5~JDK10
           </a>
         </li>
       	<hr/>
 
      	<li>
-        <a href="https://blog.csdn.net/tieselingzhi/article/details/79764048" target="rightFrame" onclick="show('course.html')">@media screen实现屏幕自适应内容详解
+        <a href="" id="a3" target="rightFrame" onclick="show('a3','https://blog.csdn.net/tieselingzhi/article/details/79764048')" >@media screen实现屏幕自适应内容详解
         </a>
       </li>
      	<hr/>
 
-     	<li><a href="https://segmentfault.com/a/1190000015363373" target="rightFrame" onclick="show('course.html')">下载python3安装包手动安装－配置坏境</a>
+     	<li>
+        <a href="" id="a4" onclick="show('a4','https://segmentfault.com/a/1190000015363373')" target="rightFrame" >下载python3安装包手动安装－配置坏境
+        </a>
       </li>
      	<hr/>
 
-     	<li><a href="https://2676583711.github.io/Jsoup/jsoup.html" target="rightFrame" onclick="show('course.html')">Jsoup（一）Jsoup详解（官方）-苦水润喉-博客园</a>
+     	<li> 
+        <a href="" id="a5" onclick="show('a5','https://2676583711.github.io/Jsoup/jsoup.html')" target="rightFrame">Jsoup（一）Jsoup详解（官方）-苦水润喉-博客园
+        </a>
       </li>
      <hr/>
 	
      	<li>
-        <a href="onclick="show('course.html')" target="rightFrame">课程表</a>
+        <a href="" id="a6" onclick="show('a6','classes/course.html')" target="rightFrame">课程表</a>
       </li>  
 <hr/>
-      <li><a href="right.html" target="rightFrame" onclick="show('classes/course.html')">看抖音小视频</a>
+      <li><a href="" id="a3" target="rightFrame" onclick="integrate('right.html.html')">看抖音小视频</a>
       </li> 
      </ol>
      <hr/>
