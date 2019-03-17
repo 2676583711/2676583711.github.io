@@ -36,18 +36,18 @@ body{
   var url="https://2676583711.github.io/" //主页面地址
 
    function show(idName,html){  //直接展示
-     document.getElementById("idName").href=html;
+     document.getElementById(idName).href=html;
    }
 
    function integrate(idName,html){ //拼接url，然后展示
-     document.getElementById("idName").href=url+html;
+     document.getElementById(idName).href=url+html;
    }
     
    </script>
+
  </head>
 <body>
 <div id="one">
- 
      <ol id="abc">
      	<li>
         <a href="" target="rightFrame" id="a1" onclick="show('a1','http://www.baidu.com')">点击这里去百度
@@ -77,17 +77,20 @@ body{
         <a href="" id="a5" onclick="integrate('a5','Jsoup/jsoup.html')" target="rightFrame">Jsoup（一）Jsoup详解（官方）-苦水润喉-博客园
         </a>
       </li>
-     <hr/>
+      <hr/>
 	
      	<li>
-        <a href="" id="a6" onclick="integrate('a6','lesson/course.html')" target="rightFrame">课程表</a>
+        <a href="" id="a6" onclick="integrate('a6','lesson/course.html')" target="rightFrame">课程表
+        </a>
       </li>  
-<hr/>
-      <li><a href="" id="a7" target="rightFrame" onclick="integrate('a7','right.html')">看抖音小视频</a>
+      <hr/>
+      <li>
+        <a href="" id="a7" target="rightFrame" onclick="integrate('a7','right.html')">看抖音小视频
+        </a>
       </li> 
-     </ol>
-     <hr/>
+      <hr/>
 
+     </ol>
 </div>
 
 </body>
