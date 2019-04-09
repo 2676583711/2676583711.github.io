@@ -10,6 +10,8 @@
 <link href="res/css/admin.css" rel="stylesheet" type="text/css" />
 
 <style type="text/css">
+
+  /* 视屏播放区 */
    #one{
      background-color:#663300;  /*#CCCC33*/
     width:90%;
@@ -18,82 +20,44 @@
     float:left;
   }
 
+/*视频样式*/
 #v{
 /*     background-color:#3333FF;
 */   width:100%;
     height:100%;
     margin:0px;
-    float:center;
+    
   }
 
-
+#bu{
+  width:10%;
+  height:100%;
+  background-color:#3333FF;
+  margin: 0px;
+   float:right;
+}
+/*按钮样式*/
   #two{
     background-color:#999933;
-    width:10%;
-    height:100%;
-    margin:0px;
+    width:100%;
+    height:10%; 
     text-align: center;
     align-self: center;
     float:left;
+    margin-top:120px;
   }
 
-  table{
-/*    background-color:#0099FF;
-*/    width:75%;
-    height:100%;
-    margin:0px;
-    text-align: center;
-    float:left;
-  }
-
-   td{
-/*    background-color:#0099FF;
-*/    width:100%;
-    height:100%;
-    margin:0px;
-    text-align: center;
-    float:left;
-  }
-
-  #blank{
-     width:75%;
-    height:20%;
-    margin:0px;
-    text-align: center;
-    float:left;
-  }
-
-    #previous{
-    background-color:#FF9933;
-    width:100%         /*///75%;*/
-    height:10%;
-    margin:0px;
-    text-align: center;
-    float:right;
-    /*font-size:35px;
-    word-wrap: break-word; 
-     letter-spacing: 35px;*/
-  }
-
-
-    #next{
-    background-color:#66CC00;
-    width:100%;
-    height:10%;
-    margin:0px;
-    text-align: center;
-    float:right;
-/*   font-size:35px; 
-     word-wrap: break-word; 
-    letter-spacing: 35px;*/
-  }
+  
 
 </style>
 
 <script type="text/javascript">
 
-  var url="https://2676583711.github.io/"; //主页面地址
- var vUrl="https://2676583711.github.io/videos/";
+//主页面地址
+  var url="https://2676583711.github.io/"; 
+
+  //视频地址
+  var vUrl="https://2676583711.github.io/videos/";
 
 
 
@@ -102,12 +66,30 @@
    }
 
 //测试本地视频切换
-var vu="/home/zhou/workspace/github/2676583711/2676583711.github.io/videos/";
-  function show2(i){   
+// var vu="/home/zhou/workspace/github/2676583711/2676583711.github.io/videos/";
+
+vu=vUrl;
+  var i=1;
+  function previous(){   
+    i--;
+    if(i<=1){
+      i=1;
+    }
      document.getElementById("v2").src=vu+i+".mp4";
-     //document.getElementById("v").play();
-     alert(document.getElementById("v2").src)
+     document.getElementById("v1").load();
    }
+
+   function next(){   
+      i++;
+      if(i>=12){
+        i=12;
+      }
+     document.getElementById("v2").src=vu+i+".mp4";
+     document.getElementById("v1").load();
+   }
+
+
+
   
 </script>
  
@@ -115,30 +97,18 @@ var vu="/home/zhou/workspace/github/2676583711/2676583711.github.io/videos/";
 <body>
 
   	<div id="one"> 
-      	<video id="v" controls="controls"  >  
-          <!--videos/1.mp4  /images/video.png  videos/1.mp4 src="videos/1.mp4"-->
-        <source id="v2"  src="videos/1.mp4"  type="video/mp4" >
+      	<video id="v1" controls="controls"   width="100%"
+    height="100%">  
+            <source id="v2"  src="videos/1.mp4"  type="video/mp4" >
         </video>
   	</div> 
-
-
-  	<div id="two"> 
-
-              <!--  <div id="blank">
-               </div> -->
-
-          <a href="" onclick="show2(2)">  
-             <div id="previous">
-                 上一个2
-              </div>
-          </a>
  
-        <a href=""  onclick="show2(11)"> 
-            <div id="next">
-              下一个11
-            </div>
-        </a>
-  	</div>
+  
+ <div id="bu">
+     <button id="two" onclick="previous()">previous</button>
+     <button id="two" onclick="next()">next</button>
+</div>
+        
  
 </body>
 </html>

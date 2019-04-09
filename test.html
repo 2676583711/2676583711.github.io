@@ -6,16 +6,73 @@
 	<title></title>
 	<link rel="stylesheet" href="">
 
-	<script type="text/javascript">
+<script type="text/javascript">
 
-  		function abc(idName,url){
-  			 
-  			document.getElementById(idName).href="https://www.baidu"+url;
+var url="videos/"
+
+  var  path="videos/11.mp4";
+
+// path=url+2+".mp4";
+//   			alert(path )
+var i=1;
+  		function abc(){
+  			i++;
+  			if(i>=12){
+  				i=12;
+  			}
+  			  document.getElementById("v1").src=url+i+".mp4";
+ 			 document.getElementById("m").load();
   		}
+
+   
+
+// window.onload=function(){
+//     document.getElementById("u1").onclick=function(){
+//         document.getElementById("v1").src="videos/1.mp4";
+//         document.getElementById("m").load();
+//     }
+//     document.getElementById("u2").onclick=function(){
+//         document.getElementById("v1").src="videos/2.mp4";
+//         document.getElementById("m").load();
+//     }
+//     document.getElementById("u3").onclick=function(){
+//         document.getElementById("v1").src="videos/3.mp4";
+//         document.getElementById("m").load();
+//     }
+//     document.getElementById("u4").onclick=function(){
+//         document.getElementById("v1").src="videos/4.mp4";
+//         document.getElementById("m").load();
+//     }
+// }
 	</script>
+
 </head>
 <body>
 	<h2>test click</h2>
-	<a  href="" id="h"   onclick='abc("h",".com")'>click me here</a>
+		<video  controls="controls" id="v">  
+          <!--videos/1.mp4  /images/video.png  videos/1.mp4  src="videos/1.mp4"-->
+        <source id="v2"    type="video/mp4"  >  
+      </video>
+<hr>
+ 
+        <a  href="" id="h"   onclick='abc()'>click me here</a>
+
+
+
+<!-- html部分 -->
+<section id="player">
+    <video id="m" width="50%" height="30%" controls>
+        <source id="v1" src="videos/1.mp4">
+    </video>
+</section>
+ 
+<div  width="100%" style="margin-top:20px">
+    <button id="u1">第一章</button>
+    <button id="u2">第二章</button>
+    <button id="u3">第三章</button>
+    <button id="u4" onclick="abc()">第四章444444</button>
+</div>
+
+
 </body>
 </html>
