@@ -72,8 +72,10 @@ vu=vUrl;
   var i=1;
   function previous(){   
     i--;
-    if(i<=1){
+    if(i<=0){ //判断视频个数，不能小于１
       i=1;
+      alert("已经是第一个了");
+      return;
     }
      document.getElementById("v2").src=vu+i+".mp4";
      document.getElementById("v1").load();
@@ -81,8 +83,10 @@ vu=vUrl;
 
    function next(){   
       i++;
-      if(i>=12){
+      if(i>=13){ //判断视屏个数不能大于１２，只有１２个视屏
         i=12;
+      alert("已经是最后一个了");
+      return;
       }
      document.getElementById("v2").src=vu+i+".mp4";
      document.getElementById("v1").load();
