@@ -81,9 +81,11 @@ vu=vUrl;
      document.getElementById("v1").load();
    }
 
+  //视频个数的上限(实际的数量加一)
+   var  up_limit=56;
    function next(){   
       i++;
-      if(i>=13){ //判断视屏个数不能大于１２，只有１２个视屏
+      if(i>=up_limit){ //判断视屏个数不能大于１２，只有１２个视屏
         i=12;
       alert("已经是最后一个了");
       return;
